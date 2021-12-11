@@ -23,5 +23,7 @@ def weather_by_city(city_name):
 
 if __name__ == "__main__":
     weather = weather_by_city("Moscow,Russia")
+    img = weather['weatherIconUrl'][0]['value']
     print(weather)
     print(f"Сейчас {weather['temp_C']},ощущается как {weather['FeelsLikeC']}")
+    print(img)
