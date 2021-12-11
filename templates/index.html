@@ -25,31 +25,34 @@
 &nbsp;
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="card" style="width: 12rem;">
-                    <img src="{{weather.weatherIconUrl[0]['value']}}" class="card-img-top" alt="Изображение недоступно">
-                    <div class="card-body">
-                        <h5 class="card-title">Прогноз погоды в Москве</h5>
-                        <p class="card-text">{% if weather %}
-                            Температура: {{ weather.temp_C }} <br>ощущается как {{ weather.FeelsLikeC }}
-                            {% else %}
-                            Сервис погоды временно недоступен
-                            {% endif %}</br></p>
-                        <a href="#" class="btn btn-primary">Подробнее</a>
+    <div class="d-inline-flex p-2 bd-highlight">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card" style="width: 12rem;">
+                        <img src="{{weather.weatherIconUrl[0]['value']}}" class="card-img-top"
+                            alt="Изображение недоступно">
+                        <div class="card-body">
+                            <h5 class="card-title">Прогноз погоды в Москве</h5>
+                            <p class="card-text">{% if weather %}
+                                Температура: {{ weather.temp_C }} <br>ощущается как {{ weather.FeelsLikeC }}
+                                {% else %}
+                                Сервис погоды временно недоступен
+                                {% endif %}</br></p>
+                            <a href="#" class="btn btn-primary">Подробнее</a>
+                        </div>
                     </div>
+
                 </div>
+                <div class="col-8">Новости
+                    {% for news in news_list[:5] %}
+                    <h6>{{news.title}}</h6>
+                    </hr>
+                    {% endfor %}
+                </div>
+            </div>
 
-            </div>
-            <div class="col-8">Новости
-                {% for news in news_list[:5] %}
-                <h6>{{news.title}}</h6>
-                </hr>
-                {% endfor %}
-            </div>
         </div>
-
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
