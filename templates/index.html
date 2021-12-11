@@ -28,7 +28,7 @@
     <div class="d-inline-flex p-2 bd-highlight">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col">
                     <div class="card" style="width: 12rem;">
                         <img src="{{weather.weatherIconUrl[0]['value']}}" class="card-img-top"
                             alt="Изображение недоступно">
@@ -44,7 +44,7 @@
                     </div>
 
                 </div>
-                <div class="col-8">Новости
+                <div class="col">Новости
                     {% for news in news_list[:5] %}
                     <h6>{{news.title}}</h6>
                     </hr>
